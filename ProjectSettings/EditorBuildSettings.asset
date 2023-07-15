@@ -5,12 +5,15 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/StartMenuScene2.unity
     guid: 3862c69c2eaeb4110b8e4cf2910729f6
   - enabled: 1
     path: Assets/Scenes/FondoMarino.unity
     guid: 99b691442124b4f52b324fe23ae76740
+  - enabled: 0
+    path: Assets/Scenes/FinalMenuScene.unity
+    guid: ccfd9acc16a1c42c480672014c2f9564
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: e5a47d1ff5ad24be1bc77a28dbe5cbb1, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 6ca08b3969fd6483a8bb39f5463a597b, type: 2}

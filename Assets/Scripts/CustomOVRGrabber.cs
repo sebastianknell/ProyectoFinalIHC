@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using Meta.WitAi;
 using UnityEngine;
 
 public class CustomOVRGrabber : OVRGrabber
 {
+    public AudioSource audioSource;
     private GameManager gameManager;
-    // private AudioSource audioSource;
  
     protected override void Start()
     {
@@ -17,7 +18,11 @@ public class CustomOVRGrabber : OVRGrabber
     protected override void GrabBegin()
     {
         base.GrabBegin();
-        // audioSource.Play();
-        gameManager.UpdatePoints();
+        if (grabbedObject != null)
+        {
+            audioSource.Play();
+            gameManager.UpdatePoints();
+            Destroy(grabbedObject);
+        }
     }
 }
