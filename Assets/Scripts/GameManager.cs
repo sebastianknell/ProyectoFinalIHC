@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI puntajeRef;
     private FaunaSpawner _faunaSpawner;
 
-    private float totalTime = 60;
+    private float totalTime = 100;
     private float currentTime;
     private int totalPoints = 0;
     private int pointsIncrease = 0;
@@ -71,10 +71,11 @@ public class GameManager : MonoBehaviour
     
     private void OnDisable()
     {
-        var maxScore = PlayerPrefs.GetInt("score");
+        var maxScore = PlayerPrefs.GetInt("max_score");
         if (totalPoints > maxScore)
         {
-            PlayerPrefs.SetInt("score", totalPoints);
+            PlayerPrefs.SetInt("max_score", totalPoints);
         }
+        PlayerPrefs.SetInt("last_score", totalPoints);
     }
 }

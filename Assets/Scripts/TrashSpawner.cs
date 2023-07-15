@@ -14,17 +14,17 @@ public class Trash
 public class TrashSpawner : MonoBehaviour
 {
     // List with objects to spawn and their probability
-    [SerializeField] private GameManager gameManager;
     [SerializeField] private Terrain terrain;
     [SerializeField] private List<Trash> listObjs;
     System.Random rnd = new System.Random();
     
-    [SerializeField] public float spawnInterval = 10f;
+    [SerializeField] public float spawnInterval = 1000f;
 
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(SpawnObjectsCoroutine());
+        SpawnObjects();
+        // StartCoroutine(SpawnObjectsCoroutine());
     }
     
     private IEnumerator SpawnObjectsCoroutine()
