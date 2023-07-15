@@ -554,13 +554,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animals:
   - prefab: {fileID: 104517609856167801, guid: 94c015d94f6e5364e9b36b960bbe1b77, type: 3}
-    probability: 20
+    probability: 25
   - prefab: {fileID: 7770584863604633872, guid: 67de17aaa6711224f80123d9b1ef8cb7, type: 3}
-    probability: 20
+    probability: 25
   - prefab: {fileID: 2206852426022253465, guid: de500f6b90f89bc4c87a6585b2dea01a, type: 3}
-    probability: 20
+    probability: 25
   - prefab: {fileID: 1937588542411740048, guid: a05072560c3476b4cb8dddf22f697392, type: 3}
-    probability: 20
+    probability: 25
   - prefab: {fileID: 2574605948901126564, guid: 3c2312e8ef2d98b4a9fb9bd7e10b1d81, type: 3}
     probability: 10
   terrain: {fileID: 988581486}

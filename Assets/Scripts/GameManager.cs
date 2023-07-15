@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI puntajeRef;
     private FaunaSpawner _faunaSpawner;
 
-    private float totalTime = 100;
+    private float totalTime = 180;
     private float currentTime;
     private int totalPoints = 0;
     private int pointsIncrease = 0;
@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour
         totalPoints += 10;
         pointsIncrease += 10;
         puntajeRef.text = String.Format("{0} puntos", totalPoints);
-        if (pointsIncrease >= 100)
+        if (pointsIncrease >= 50)
         {
             _faunaSpawner.SpawnObjects();
             pointsIncrease = 0;
