@@ -24,7 +24,8 @@ public class CustomOVRGrabbable: OVRGrabbable
         // OVRInput.SetControllerVibration(vibrationIntensity, vibrationIntensity, controller);
         // audioSource.PlayOneShot(grabClip);
         // Invoke("StopVibration", vibrationDuration);
-        gameManager.UpdatePoints();
+        // gameManager.UpdatePoints();
+        Destroy(gameObject);
     }
     
     override public void GrabEnd(Vector3 linearVelocity, Vector3 angularVelocity)

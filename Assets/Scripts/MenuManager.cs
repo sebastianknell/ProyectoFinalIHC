@@ -26,4 +26,9 @@ public class MenuManager : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void onInicioClicked()
+    {
+        SceneManager.LoadScene("StartMenuScene2");
+    }
 }

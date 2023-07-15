@@ -58,7 +58,7 @@ public class GameManager : MonoBehaviour
 
         // Time's up, perform final actions
         Debug.Log("Time's up!");
-        // SceneManager.LoadScene("StartMenuScene2");
+        SceneManager.LoadScene("FinalMenuScene");
     }
     
     private string FormatTime(float time)
@@ -68,14 +68,13 @@ public class GameManager : MonoBehaviour
 
         return string.Format("{0:00}:{1:00}", minutes, seconds);
     }
-
-    private void OnEnable()
-    {
-        totalPoints = PlayerPrefs.GetInt("score");
-    }
-
+    
     private void OnDisable()
     {
-        PlayerPrefs.SetInt("score", totalPoints);
+        var maxScore = PlayerPrefs.GetInt("score");
+        if (totalPoints > maxScore)
+        {
+            PlayerPrefs.SetInt("score", totalPoints);
+        }
     }
 }
