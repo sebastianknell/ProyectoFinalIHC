@@ -14,8 +14,7 @@ GameObject:
   - component: {fileID: 5490267826982060769}
   - component: {fileID: 5085803396720837018}
   - component: {fileID: 5869210737130017203}
-  - component: {fileID: 6572493818806448708}
-  - component: {fileID: 4426385145051314577}
+  - component: {fileID: -6407346885913023015}
   m_Layer: 0
   m_Name: Tire
   m_TagString: Untagged
@@ -131,7 +130,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.495435, y: 0.45684043, z: 1.495435}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6572493818806448708
+--- !u!114 &-6407346885913023015
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -140,7 +139,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1391879495241330}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02d61468f8b77ae4b92c344bc9a600fb, type: 3}
+  m_Script: {fileID: 11500000, guid: c087c6d7f5f240dfb67a8a8d2dc2a208, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_allowOffhandGrab: 1
@@ -149,15 +148,3 @@ MonoBehaviour:
   m_snapOffset: {fileID: 0}
   m_grabPoints:
   - {fileID: 5869210737130017203}
---- !u!114 &4426385145051314577
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1391879495241330}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1032fd915f5af4fc3afdf5803e8277a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

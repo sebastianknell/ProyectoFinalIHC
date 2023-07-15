@@ -3,15 +3,18 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     public TextMeshProUGUI tiempoRef;
     public TextMeshProUGUI puntajeRef;
+    private FaunaSpawner _faunaSpawner;
 
-    private float totalTime = 300;
+    private float totalTime = 60;
     private float currentTime;
     private int totalPoints = 0;
+    private int pointsIncrease = 0;
     
     // Start is called before the first frame update
     void Start()
@@ -19,6 +22,7 @@ public class GameManager : MonoBehaviour
         currentTime = totalTime;
         tiempoRef.text = FormatTime(currentTime);
         puntajeRef.text = String.Format("{0} puntos", totalPoints);
+        _faunaSpawner = FindObjectOfType<FaunaSpawner>();
         StartCoroutine(Countdown());
     }
 
@@ -31,7 +35,13 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("updating points");
         totalPoints += 10;
+        pointsIncrease += 10;
         puntajeRef.text = String.Format("{0} puntos", totalPoints);
+        if (pointsIncrease >= 100)
+        {
+            _faunaSpawner.SpawnObjects();
+            pointsIncrease = 0;
+        }
     }
     
     private IEnumerator Countdown()
@@ -48,6 +58,7 @@ public class GameManager : MonoBehaviour
 
         // Time's up, perform final actions
         Debug.Log("Time's up!");
+        // SceneManager.LoadScene("StartMenuScene2");
     }
     
     private string FormatTime(float time)
@@ -56,5 +67,15 @@ public class GameManager : MonoBehaviour
         int seconds = Mathf.FloorToInt(time % 60);
 
         return string.Format("{0:00}:{1:00}", minutes, seconds);
+    }
+
+    private void OnEnable()
+    {
+        totalPoints = PlayerPrefs.GetInt("score");
+    }
+
+    private void OnDisable()
+    {
+        PlayerPrefs.SetInt("score", totalPoints);
     }
 }

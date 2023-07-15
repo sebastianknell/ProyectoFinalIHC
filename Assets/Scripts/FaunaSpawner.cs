@@ -24,7 +24,7 @@ public class FaunaSpawner : MonoBehaviour
         SpawnObjects();
     }
 
-    private void SpawnObjects() {
+    public void SpawnObjects() {
         TerrainData terrainData = terrain.terrainData;
 
         foreach (Animal animal in animals)

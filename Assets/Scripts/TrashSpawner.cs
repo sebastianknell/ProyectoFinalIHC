@@ -32,7 +32,6 @@ public class TrashSpawner : MonoBehaviour
             GameObject obj = trash.prefab;
             int probability = trash.probability;
             var trashGrabHandler = obj.GetComponent<TrashGrabHandler>();
-            trashGrabHandler.onGrabAction = gameManager.UpdatePoints;
           
             for (int i = 0; i < probability; i++)
             {

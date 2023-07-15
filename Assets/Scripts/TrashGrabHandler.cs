@@ -5,14 +5,13 @@ using UnityEngine.Events;
 
 public class TrashGrabHandler : MonoBehaviour
 {
-    // public UnityEvent myEvent;
-    public Action onGrabAction;
     private OVRGrabbable grabbable;
+    private GameManager gameManager;
 
     private void Start()
     {
         grabbable = GetComponent<OVRGrabbable>();
-        System.Diagnostics.Debug.Assert(GetComponent<TrashGrabHandler>() != null);
+        gameManager = FindObjectOfType<GameManager>();
         Debug.Log("yek");
     }
 
@@ -21,7 +20,7 @@ public class TrashGrabHandler : MonoBehaviour
         if (grabbable.isGrabbed)
         {
             Debug.Log("object grabbed");
-            onGrabAction.Invoke();
+            gameManager.UpdatePoints();
         }
     }
 }
