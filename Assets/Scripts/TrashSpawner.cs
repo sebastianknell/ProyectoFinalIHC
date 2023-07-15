@@ -18,11 +18,22 @@ public class TrashSpawner : MonoBehaviour
     [SerializeField] private Terrain terrain;
     [SerializeField] private List<Trash> listObjs;
     System.Random rnd = new System.Random();
+    
+    [SerializeField] public float spawnInterval = 10f;
 
     // Start is called before the first frame update
     void Start()
     {
-        SpawnObjects();
+        StartCoroutine(SpawnObjectsCoroutine());
+    }
+    
+    private IEnumerator SpawnObjectsCoroutine()
+    {
+        while (true)
+        {
+            SpawnObjects();
+            yield return new WaitForSeconds(spawnInterval);
+        }
     }
 
     private void SpawnObjects() {
