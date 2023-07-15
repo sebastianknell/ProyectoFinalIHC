@@ -24,7 +24,8 @@ public class TrashSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(SpawnObjectsCoroutine());
+        // StartCoroutine(SpawnObjectsCoroutine());
+        SpawnObjects();
     }
     
     private IEnumerator SpawnObjectsCoroutine()
